@@ -1,2 +1,8 @@
+# IDE things
+.vscode/
+.idea/
+
+# Python things
 .venv/
 **/**/__pycache__/
+**/**/.pytest_cache/
