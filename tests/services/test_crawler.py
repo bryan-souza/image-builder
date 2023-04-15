@@ -9,11 +9,11 @@ def crawler_service():
     service = CrawlerServiceImpl()
     return service
 
-class TestCrawlerServiceImpl:
 
+class TestCrawlerServiceImpl:
     @staticmethod
     def test_run(crawler_service):
-        url = 'https://www.minecraft.net/en-us/download/server/bedrock'
+        url = "https://www.minecraft.net/en-us/download/server/bedrock"
         results = crawler_service.run(url)
 
         assert isinstance(results, list)
@@ -23,7 +23,7 @@ class TestCrawlerServiceImpl:
 
     @staticmethod
     def test_run__DownloadButtonNotFoundError(crawler_service):
-        url = 'https://www.minecraft.net'
+        url = "https://www.minecraft.net"
 
         with pytest.raises(DownloadButtonNotFoundError):
             _ = crawler_service.run(url)
