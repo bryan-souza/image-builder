@@ -29,8 +29,9 @@ class CrawlerService(ABC):
 
 class CrawlerServiceImpl(CrawlerService):
     def run(self, url):
+        # TODO: Refactor
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            browser = p.firefox.launch()
             page = browser.new_page(user_agent='Mozilla/5.0 (Windows NT 10.0; rv:102.0) Gecko/20100101 Firefox/102.0')
             page.goto(url)
             page.wait_for_load_state(state='networkidle')
