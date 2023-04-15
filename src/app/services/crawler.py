@@ -13,14 +13,18 @@ class CrawlerService(ABC):
         """
         Runs the web crawler
 
-        Params:
-        url: str
+        Parameters
+        ----------
+        url : str
+            The URL to be scraped
 
-        Returns:
+        Returns
+        -------
         List[str]
             A list of dedicated server binary download links
 
-        Raises:
+        Raises
+        ------
         DownloadButtonNotFoundError
             If no compatible download button was found in the provided page
         """
