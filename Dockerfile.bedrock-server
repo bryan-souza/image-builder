@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get install curl -y && \
+    apt-get clean -y
+
+COPY ./cache/bedrock-server /bedrock-server/
+WORKDIR /bedrock-server
+ENV LD_LIBRARY=.
+ENTRYPOINT ["./bedrock_server"]
